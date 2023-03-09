@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { useRouter } from "next/router";
 
 export default function Home() {
@@ -14,10 +13,6 @@ export default function Home() {
       <button className="bg-blue-500 px-3 py-1 rounded" onClick={handleClick}>
         Click Me!
       </button>
-      <div className="bg-red-100 text-2xl">Hello👋</div>
-      <div>
-        <Link href="/books">Go to books page</Link>
-      </div>
     </div>
   );
 }
