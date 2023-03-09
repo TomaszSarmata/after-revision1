@@ -1,5 +1,4 @@
 import Header from "@/components/shared/header";
-
 import Content from "@/components/shared/content";
 import Footer from "@/components/shared/footer";
 
