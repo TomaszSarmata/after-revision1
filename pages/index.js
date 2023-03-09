@@ -10,6 +10,7 @@ export default function Home() {
 
   return (
     <div>
+      <div className="bg-green-50">Hello welcome to my website!</div>
       <button className="bg-blue-500 px-3 py-1 rounded" onClick={handleClick}>
         Click Me!
       </button>
