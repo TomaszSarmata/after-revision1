@@ -3,6 +3,7 @@ import Content from "@/components/shared/content";
 import Footer from "@/components/shared/footer";
 import { useRouter } from "next/router";
 import Hero from "@/components/home/hero";
+import Topics from "@/components/home/topics";
 
 export default function Home() {
   const router = useRouter();
@@ -22,12 +23,17 @@ export default function Home() {
         subtitle="I am a bootcamp student"
       ></Hero>
       <Content>
-        <button
-          className="bg-blue-500 px-3 py-1 rounded-lg mt-8"
-          onClick={handleClick}
-        >
-          Go to Books Page!
-        </button>
+        <div className="w-full flex flex-col">
+          <Topics></Topics>
+          <div>
+            <button
+              className="bg-blue-500 px-3 py-1 rounded-lg mt-8"
+              onClick={handleClick}
+            >
+              Go to Books Page!
+            </button>
+          </div>
+        </div>
       </Content>
       <Footer href="/books" title="Books"></Footer>
     </div>
