@@ -16,8 +16,8 @@ export default function BooksGrid() {
 
   return (
     <div className="w-full grid grid-cols-3 gap-4 mt-8">
-      {books.map((book) => (
-        <BookItem book={book}></BookItem>
+      {books.map((book, index) => (
+        <BookItem book={book} key={index}></BookItem>
       ))}
     </div>
   );
