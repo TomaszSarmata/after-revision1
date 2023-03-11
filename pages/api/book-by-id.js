@@ -1,4 +1,6 @@
 export default function handler(req, res) {
+  const { id } = req.query;
+
   const initialBooks = [
     {
       id: "1",
@@ -20,5 +22,13 @@ export default function handler(req, res) {
     },
   ];
 
-  res.json(initialBooks);
+  const foundBook = initialBooks.find((book) => {
+    if (book.id === id) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+
+  res.json({ book: foundBook });
 }
