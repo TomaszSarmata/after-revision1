@@ -6,7 +6,7 @@ export default function BookItem({ book }) {
 
   const handleLike = async () => {
     let newValue = like + 1;
-    setLike(newValue);
+    setLike(newValue); //lazy upload here
     const id = +book.id;
     const response = await fetch(
       `/api/increment-likes?id=${id}&likes=${newValue}`
