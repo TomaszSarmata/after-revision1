@@ -2,11 +2,16 @@ import { useState } from "react";
 import Link from "next/link";
 
 export default function BookItem({ book }) {
-  const [like, setLike] = useState(0);
+  const [like, setLike] = useState(+book.likes);
 
-  const handleLike = () => {
+  const handleLike = async () => {
     let newValue = like + 1;
     setLike(newValue);
+    const id = +book.id;
+    const response = await fetch(
+      `/api/increment-likes?id=${id}&likes=${newValue}`
+    );
+    const data = await response.json();
   };
 
   return (
