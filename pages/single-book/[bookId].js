@@ -40,7 +40,7 @@ export default function SingleBook() {
     <div>
       <Header title={singleBook.title}></Header>
       <Hero
-        imgUrl={singleBook.imgUrl}
+        imgUrl={singleBook.img_url}
         title={singleBook.title}
         subtitle={singleBook.author}
       ></Hero>
