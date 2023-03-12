@@ -4,8 +4,6 @@ export default async function handler(req, res) {
   const id = +req.query.id;
   const likes = +req.query.likes;
 
-  console.log("here id", id);
-
   if (id === null || id === undefined) {
     res.status(400).json({ message: "Book id is required" });
     return;
