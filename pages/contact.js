@@ -2,22 +2,13 @@ import Header from "@/components/shared/header";
 import Content from "@/components/shared/content";
 import Footer from "@/components/shared/footer";
 import { useState } from "react";
+import Input from "@/components/forms/input";
 
 export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [showSuccess, setShowSuccess] = useState(false);
-
-  const getName = (e) => {
-    const name = e.target.value;
-    setName(name);
-  };
-
-  const getEmail = (e) => {
-    const email = e.target.value;
-    setEmail(email);
-  };
 
   const getMessage = (e) => {
     const message = e.target.value;
@@ -44,20 +35,19 @@ export default function Contact() {
       <Header title="Contact"></Header>
       <Content>
         <form className="flex flex-col space-y-3">
-          <input
+          <Input
             placeholder="name"
-            type="text"
-            className="bg-gray-200 py-3 px-6 w-96 rounded"
             value={name}
-            onChange={getName}
-          />
-          <input
+            onChange={(value) => setName(value)}
+            type="text"
+          ></Input>
+          <Input
             placeholder="email"
-            type="email"
-            className="bg-gray-200 py-3 px-6 w-96 rounded"
             value={email}
-            onChange={getEmail}
-          />
+            onChange={(value) => setEmail(value)}
+            type="email"
+          ></Input>
+
           <textarea
             placeholder="Your message"
             type="text"
