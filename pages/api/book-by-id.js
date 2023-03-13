@@ -8,8 +8,6 @@ export default async function handler(req, res) {
       where id = ${id}
   `;
 
-  console.log("here", books);
-
   if (books.length < 1) {
     res.status(404).json({ message: "Book not found" });
     return;
