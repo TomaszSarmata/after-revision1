@@ -25,7 +25,7 @@ export default function Home() {
       <Content>
         <div className="w-full flex flex-col">
           <Topics></Topics>
-          <div>
+          <div className="hidden md:block">
             <button
               className="bg-blue-500 px-3 py-1 rounded-lg mt-8"
               onClick={handleClick}
