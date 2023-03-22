@@ -6,7 +6,9 @@ export default function Hero({ imgUrl, title, subtitle }) {
           <img className="rounded-lg " src={imgUrl} alt="" />
         </div>
         <div className="w-full text-center md:text-start">
-          <h1 className="text-6xl font-bold">{title}</h1>
+          <h1 className="text-6xl font-bold text-gray-600 sm:text-green-600 md:text-blue-500 lg:text-red-600">
+            {title}
+          </h1>
           <p className="text-xl text-gray-700">{subtitle}</p>
         </div>
       </div>
