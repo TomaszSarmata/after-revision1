@@ -60,7 +60,7 @@ export default function Contact() {
     <div className="w-full">
       <Header title="Contact"></Header>
       <Content>
-        <form className="flex flex-col space-y-3 w-full sm:w-96">
+        <form className="flex flex-col space-y-3 w-full sm:w-96 px-4">
           <Input
             placeholder="name"
             value={name}
