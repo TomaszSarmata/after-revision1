@@ -5,7 +5,7 @@ export default function Input(props) {
   };
 
   return (
-    <div>
+    <div className="w-full">
       <input
         className="bg-gray-200 py-3 px-6 w-full rounded"
         {...props}
