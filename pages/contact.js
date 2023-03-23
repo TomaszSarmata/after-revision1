@@ -41,10 +41,21 @@ export default function Contact() {
     if (!email) return;
     if (!message) return;
 
-    const response = await fetch(
-      `/api/contact?name=${name}&email=${email}&message=${message}`
-    );
-    const data = await response.json();
+    let payload = {
+      name: name,
+      email: email,
+      message: message,
+    };
+
+    const response = await fetch(`/api/contact`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+
+    const data = response.json();
 
     setName("");
     setEmail("");
