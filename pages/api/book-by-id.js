@@ -3,6 +3,10 @@ import sql from "@/utils/postrgres";
 export default async function handler(req, res) {
   const { id } = req.query;
 
+  if (id === null || id === undefined) {
+    res.status(400).json({ message: "missing id" });
+  }
+
   const books = await sql`
       SELECT * FROM books
       where id = ${id}
