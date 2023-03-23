@@ -5,6 +5,8 @@ export default async function handler(req, res) {
   const email = req.body.email;
   const message = req.body.message;
 
+  console.log("here", req.body); //just to debug in console over here below (can't bee seen in the browser as its serverside)
+
   if (name === undefined) {
     res.status(400).json({ message: "Name is required" });
     return;
