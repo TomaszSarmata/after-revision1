@@ -1,4 +1,5 @@
 import Input from "@/components/forms/input";
+import LocationItem from "@/components/search/location-item";
 import Content from "@/components/shared/content";
 import Footer from "@/components/shared/footer";
 import Header from "@/components/shared/header";
@@ -39,10 +40,7 @@ export default function Search() {
         </div>
         <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-10">
           {locations.map((location) => (
-            <div key={location.id} className="w-full h-40 bg-red-100">
-              <img src={location.img_url} alt="" />
-              <p>{location.title}</p>
-            </div>
+            <LocationItem key={location.id} location={location}></LocationItem>
           ))}
         </div>
       </Content>
