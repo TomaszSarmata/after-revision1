@@ -3,8 +3,26 @@ import Content from "@/components/shared/content";
 import Footer from "@/components/shared/footer";
 import Header from "@/components/shared/header";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function Search() {
+  const [locations, setLocations] = useState([]);
+
+  useEffect(() => {
+    getLocations();
+  }, []);
+
+  const getLocations = async () => {
+    const response = await fetch(`/api/locations`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "applications",
+      },
+    });
+    const data = await response.json();
+    setLocations(data);
+  };
+
   return (
     <div className="w-full">
       <Header title="Search"></Header>
@@ -19,10 +37,9 @@ export default function Search() {
           </button>
         </div>
         <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-10">
-          <div className="w-full h-40 bg-red-100">results</div>
-          <div className="w-full h-40 bg-red-100">results</div>
-          <div className="w-full h-40 bg-red-100">results</div>
-          <div className="w-full h-40 bg-red-100">results</div>
+          {locations.map((location) => (
+            <div key={location.id} className="w-full h-40 bg-red-100"></div>
+          ))}
         </div>
       </Content>
       <Footer href="/" title="Home"></Footer>
