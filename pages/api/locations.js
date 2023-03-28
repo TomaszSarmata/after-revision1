@@ -1,9 +1,20 @@
 import sql from "@/utils/postrgres";
 
 export default async function handler(req, res) {
-  const locations = await sql`
+  const search = req.query.search;
+
+  let locations = [];
+
+  if (search === null || search === undefined) {
+    locations = await sql`
       select * from locations
-  `;
+    `;
+  } else {
+    locations = await sql`
+      select * from locations
+      where title LIKE ${search}
+    `;
+  }
 
   // const locations = [
   //   {

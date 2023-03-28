@@ -22,6 +22,22 @@ export default function Search() {
       },
     });
     const data = await response.json();
+
+    setLocations(data);
+  };
+
+  const getFilteredLocations = async () => {
+    if (!input) {
+      getLocations();
+      return;
+    }
+    const response = await fetch(`/api/locations?search=${input}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await response.json();
     setLocations(data);
   };
 
@@ -34,6 +50,7 @@ export default function Search() {
           <button
             className="bg-blue-500 text-white rounded px-6 py-2"
             type="button"
+            onClick={getFilteredLocations}
           >
             S
           </button>
