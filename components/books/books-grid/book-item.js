@@ -19,6 +19,7 @@ export default function BookItem({ book }) {
       <Link href={`/single-book/${book.id}`}>
         <img src={book.img_url} className="rounded-lg" />
       </Link>
+
       <p className="text-center text-xl font-medium ">{book.title}</p>
       <p className="text-center text-gray-700">{book.author}</p>
       <button
